@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Divider, Typography, Checkbox } from "@mui/material";
 import { Box } from "@mui/system";
 import { CustomInput } from "../../components/Input";
+import { Link } from "react-router-dom";
 
 const initUser = {
   username: "",
@@ -26,7 +27,7 @@ const Signup = () => {
 
   return (
     <Box
-      minHeight="100vh"
+      minHeight="96vh"
       display="flex"
       justifyContent="center"
       alignItems="center"
@@ -52,7 +53,7 @@ const Signup = () => {
             height: "5px",
             bgcolor: "primary.800",
             border: 0,
-            width: "50%",
+            width: "100px",
             borderRadius: 5,
           }}
         />
@@ -103,6 +104,25 @@ const Signup = () => {
             Sign up
           </Button>
         </form>
+        <Typography
+          sx={{
+            mt: "20px",
+            textAlign: "center",
+            color: "secondary",
+          }}
+        >
+          Dont have an account?{" "}
+          <Typography 
+            component={Link} 
+            to="/login"
+            sx={{
+              color : 'primary.600', 
+              textDecoration : 'none'
+            }}
+          >
+            Login
+          </Typography>
+        </Typography>
       </Box>
     </Box>
   );

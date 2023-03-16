@@ -1,7 +1,8 @@
 import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
+import { Link } from 'react-router-dom'
+import CustomAvatar from '../Avatar'
 import Dropdown from '../Dropdown'
-import NavAvatar from './Avatar'
 import SearchBox from './SearchBox'
 
 const Navbar = () => {
@@ -21,11 +22,14 @@ const Navbar = () => {
             }}
         >
             <Typography 
+                component={Link}
+                to="/"
                 sx={{
                     color : 'primary.main',
                     fontSize : '20px',
                     fontWeight : 700,
-                    fontFamily : 'cursive'
+                    fontFamily : 'cursive',
+                    textDecoration : 'none'
                 }} 
             >
                 MyWork
@@ -47,7 +51,7 @@ const Navbar = () => {
             }}
         >
             <SearchBox />
-            <NavAvatar name="Mahmoud Hamdan" />
+            <CustomAvatar name="Mahmoud Hamdan" sx={{width :35 , height : 35, fontSize : '.85rem'}} />
         </Box>
     </Box>
   )

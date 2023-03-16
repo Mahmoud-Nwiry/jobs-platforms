@@ -16,7 +16,7 @@ const StyledInput = styled(TextField)(({ theme }) => ({
   }
 }));
 
-export const CustomInput = ({ type, id, placeholder, value, onChange, label, required }) => {
+export const CustomInput = ({ type, id, placeholder, value, onChange, label, required, ...other }) => {
   return (
     <StyledInput
       type={type}
@@ -26,6 +26,7 @@ export const CustomInput = ({ type, id, placeholder, value, onChange, label, req
       id={id}
       label={label}
       required={required}
+      {...other}
     />
   );
 };

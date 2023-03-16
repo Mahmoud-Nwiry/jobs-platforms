@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Button, Divider, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { CustomInput } from "../../components/Input";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserData } from "../../redux/user";
 
 const initUser = {
   password: "",
@@ -10,14 +12,26 @@ const initUser = {
 };
 
 const Login = () => {
-  const [user, setUser] = useState(initUser);
+  const [values, setValues] = useState(initUser);
+
+  const { user, isLoading } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
 
   const handelChange = (element) => {
     const { id, value } = element;
-    setUser((prev) => {
+    setValues((prev) => {
       return { ...prev, [id]: value };
     });
   };
+
+  const sendData = (e) => {
+    e.preventDefault();
+
+    console.log('yes');
+    dispatch(getUserData(values))
+    
+  }
 
   return (
     <Box
@@ -26,6 +40,7 @@ const Login = () => {
       justifyContent="center"
       alignItems="center"
     >
+      {Object.keys(user).length > 0? <Navigate to='/' /> : ''}
       <Box
         sx={{
           boxShadow: "1px 5px 15px rgb(0,0,0,0.2)",
@@ -51,12 +66,12 @@ const Login = () => {
             borderRadius: 5,
           }}
         />
-        <form>
+        <form onSubmit={sendData}>
           <Box sx={{ my: 8 }}>
             <CustomInput
               type="email"
               label="Email"
-              value={user.email}
+              value={values.email}
               placeholder="exampel@any.com"
               id="email"
               onChange={(e) => handelChange(e.target)}
@@ -67,14 +82,14 @@ const Login = () => {
             <CustomInput
               type="password"
               label="Password"
-              value={user.password}
+              value={values.password}
               placeholder="Enter password"
               id="password"
               onChange={(e) => handelChange(e.target)}
               required
             />
           </Box>
-          <Button variant="contained" sx={{ width: "100%" }}>
+          <Button variant="contained" disabled={isLoading} type="submit" sx={{ width: "100%" }}>
             Login
           </Button>
         </form>

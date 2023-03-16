@@ -2,28 +2,57 @@ import { useState } from "react";
 import { Button, Divider, Typography, Checkbox } from "@mui/material";
 import { Box } from "@mui/system";
 import { CustomInput } from "../../components/Input";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { createNewUser } from "../../redux/user";
+
+const profileInit = {
+  name: "",
+  price: 0.0,
+  bio: "",
+  languages: [],
+  education: [],
+  skills : []
+};
 
 const initUser = {
-  username: "",
+  name: "",
   password: "",
   email: "",
   privacy: false,
+  image : "",
+  location : "",
+  saved : [],
+  searched : [],
+  profile : {...profileInit}
 };
 
 const Signup = () => {
-  const [user, setUser] = useState(initUser);
+  const [values, setValues] = useState(initUser);
+
+  const { user, isLoading } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   const handelChange = (element) => {
     const { id, value } = element;
-    setUser((prev) => {
+    setValues((prev) => {
       return { ...prev, [id]: value };
     });
   };
 
   const handelPrivacy = () => {
-    setUser((prev) => ({ ...prev, privacy: !prev.privacy }));
+    setValues((prev) => ({ ...prev, privacy: !prev.privacy }));
   };
+
+  const sendData = (e) => {
+    e.preventDefault();
+
+    if(values.privacy){
+      dispatch(createNewUser(values))
+      setValues(initUser);
+    }
+
+  }
 
   return (
     <Box
@@ -57,14 +86,15 @@ const Signup = () => {
             borderRadius: 5,
           }}
         />
-        <form>
+        <form onSubmit={sendData}>
           <Box sx={{ my: 8 }}>
             <CustomInput
+              
               type="text"
-              label="Username"
-              value={user.username}
+              label="name"
+              value={values.name}
               placeholder="Enter your name"
-              id="username"
+              id="name"
               onChange={(e) => handelChange(e.target)}
               required
             />
@@ -73,7 +103,7 @@ const Signup = () => {
             <CustomInput
               type="email"
               label="Email"
-              value={user.email}
+              value={values.email}
               placeholder="exampel@any.com"
               id="email"
               onChange={(e) => handelChange(e.target)}
@@ -84,23 +114,18 @@ const Signup = () => {
             <CustomInput
               type="password"
               label="Password"
-              value={user.password}
+              value={values.password}
               placeholder="Enter password"
               id="password"
               onChange={(e) => handelChange(e.target)}
               required
             />
           </Box>
-          <Box
-            sx={{ my: 8, display: "flex", alignItems: "center" }}
-          >
-            <Checkbox
-              onClick={() => handelPrivacy()}              
-              checked={user.privacy}
-            />
+          <Box sx={{ my: 8, display: "flex", alignItems: "center" }}>
+            <Checkbox onClick={() => handelPrivacy()} checked={values.privacy} />
             <Typography variant="body1">I Agree to Privacy Policy</Typography>
           </Box>
-          <Button variant="contained" sx={{ width: "100%" }}>
+          <Button disabled={isLoading} variant="contained" type="submit" sx={{ width: "100%" }}>
             Sign up
           </Button>
         </form>
@@ -112,18 +137,19 @@ const Signup = () => {
           }}
         >
           Dont have an account?{" "}
-          <Typography 
-            component={Link} 
+          <Typography
+            component={Link}
             to="/login"
             sx={{
-              color : 'primary.600', 
-              textDecoration : 'none'
+              color: "primary.600",
+              textDecoration: "none",
             }}
           >
             Login
           </Typography>
         </Typography>
       </Box>
+      {Object.keys(user).length > 0? <Navigate to='/' /> : ''}
     </Box>
   );
 };

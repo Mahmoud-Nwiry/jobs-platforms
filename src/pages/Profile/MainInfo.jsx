@@ -20,7 +20,7 @@ const MainInfo = () => {
         }}
     >
       <CustomAvatar
-        name="Mahmoud Hamdan"
+        name={user?.name  || "U N"}
         sx={{ width: 100, height: 100, fontSize: "2.5rem" }}
       />
       <Box

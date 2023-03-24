@@ -62,6 +62,22 @@ export const getUserData = (body) => async (dispatch) => {
     }
 }
 
+export const updateUserData = (body) => async (dispatch) => {
+    dispatch(setLoading(true));
+    try {
+        const { data } = await axios.put(`http://localhost:3000/users/${body.id}`, body);
+        console.log(data);
+        if (data)
+            dispatch(getUser(data))
+    }
+    catch (err) {
+        dispatch(setError(err));
+    }
+    finally {
+        dispatch(setLoading())
+    }
+}
+
 // =======================================================================================================
 
 export default userSlice.reducer

@@ -1,13 +1,262 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server1", "author": "typicode1" },
-      { "id": 2, "title": "json-server2", "author": "typicode2" },
-      { "id": 3, "title": "json-server3", "author": "typicode3" },
-      { "id": 4, "title": "json-server4", "author": "typicode4" },
-      { "id": 5, "title": "json-server5", "author": "typicode5" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+  "users": [
+    {
+      "id": 1,
+      "name": "Mahmoud Nwiry",
+      "email": "mahmoud@gmail.com",
+      "password": "123456",
+      "image": "",
+      "location": "Gaza, Palestine",
+      "saved": [],
+      "available": false,
+      "profile": {
+        "name": "React Developer",
+        "price": 30,
+        "bio": "Hello I'm Mahmoud, I'm front end developer and I have alot of skills",
+        "languages": [
+          {
+            "id": 1,
+            "name": "arabic",
+            "speaking": "native"
+          },
+          {
+            "id": 1,
+            "name": "english",
+            "speaking": "conversational"
+          }
+        ],
+        "education": [
+          {
+            "id": 1,
+            "university": "Al-Quds Open University",
+            "major": "Bachelor",
+            "years": "2018-2023"
+          }
+        ]
+      }
+    },
+    {
+      "username": "20402020",
+      "password": "sadsadsa",
+      "email": "mahmoud@gmail.com",
+      "privacy": true,
+      "image": "",
+      "location": "",
+      "saved": [],
+      "profile": {
+        "name": "",
+        "price": 0,
+        "bio": "",
+        "languages": [],
+        "education": []
+      },
+      "id": 2
+    },
+    {
+      "username": "mahmoud hamdan nwiry",
+      "password": "mahmoud1234",
+      "email": "mahmoudnwiry409@gmail.com",
+      "privacy": true,
+      "image": "",
+      "location": "",
+      "saved": [],
+      "profile": {
+        "name": "",
+        "price": 0,
+        "bio": "",
+        "languages": [],
+        "education": []
+      },
+      "id": 3
+    },
+    {
+      "name": "ali nwiri",
+      "password": "123456",
+      "email": "alinwiri10@gmail.com",
+      "privacy": true,
+      "image": "",
+      "location": "",
+      "saved": [],
+      "searched": [],
+      "profile": {
+        "name": "",
+        "price": 0,
+        "bio": "",
+        "languages": [],
+        "education": []
+      },
+      "id": 4
+    },
+    {
+      "name": "ali nwiri",
+      "password": "123456",
+      "email": "lethore@google.com",
+      "privacy": true,
+      "image": "",
+      "location": "",
+      "saved": [],
+      "searched": [],
+      "profile": {
+        "name": "Full Stack Developer",
+        "price": 0,
+        "bio": "",
+        "languages": [],
+        "education": [],
+        "skills": []
+      },
+      "id": 5
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1,
+      "title": "React Jop",
+      "field": "Web Desgin",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+      "posted": "2022-11-24T17:55:07.507+00:00",
+      "location": "Gaza, Palestine",
+      "price": 20,
+      "work_way": "fixed-price",
+      "freelancer_level": "Entry-level",
+      "project_type": "complex",
+      "skills": [
+        "web",
+        "ui/ux",
+        "javascript",
+        "react",
+        "next"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "React Jop",
+      "field": "Web Desgin",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+      "posted": "2022-11-24T17:55:07.507+00:00",
+      "location": "Gaza, Palestine",
+      "price": 10,
+      "work_way": "hourly",
+      "freelancer_level": "Entry-level",
+      "project_type": "complex",
+      "skills": [
+        "web",
+        "ui/ux",
+        "javascript",
+        "react",
+        "next"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "React Jop",
+      "field": "Web Desgin",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+      "posted": "2022-11-24T17:55:07.507+00:00",
+      "location": "Gaza, Palestine",
+      "price": 15,
+      "work_way": "fixed-price",
+      "freelancer_level": "Entry-level",
+      "project_type": "complex",
+      "skills": [
+        "web",
+        "javascript",
+        "next"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "React Jop",
+      "field": "Web Desgin",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+      "posted": "2022-11-24T17:55:07.507+00:00",
+      "location": "Gaza, Palestine",
+      "price": 20,
+      "work_way": "fixed-price",
+      "freelancer_level": "Entry-level",
+      "project_type": "complex",
+      "skills": [
+        "web",
+        "ui/ux",
+        "javascript",
+        "react",
+        "next"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "React Jop",
+      "field": "Web Desgin",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+      "posted": "2022-11-24T17:55:07.507+00:00",
+      "location": "Gaza, Palestine",
+      "price": 20,
+      "work_way": "fixed-price",
+      "freelancer_level": "Entry-level",
+      "project_type": "complex",
+      "skills": [
+        "web",
+        "ui/ux",
+        "javascript",
+        "react",
+        "next"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "React Jop",
+      "field": "Web Desgin",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+      "posted": "2022-11-24T17:55:07.507+00:00",
+      "location": "Gaza, Palestine",
+      "price": 20,
+      "work_way": "fixed-price",
+      "freelancer_level": "Entry-level",
+      "project_type": "complex",
+      "skills": [
+        "web",
+        "ui/ux",
+        "javascript",
+        "react",
+        "next"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "React Jop",
+      "field": "Web Desgin",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+      "posted": "2022-11-24T17:55:07.507+00:00",
+      "location": "Gaza, Palestine",
+      "price": 20,
+      "work_way": "fixed-price",
+      "freelancer_level": "Entry-level",
+      "project_type": "complex",
+      "skills": [
+        "web",
+        "ui/ux",
+        "javascript",
+        "react",
+        "next"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "React Jop",
+      "field": "Web Desgin",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+      "posted": "2022-11-24T17:55:07.507+00:00",
+      "location": "Gaza, Palestine",
+      "price": 20,
+      "work_way": "fixed-price",
+      "freelancer_level": "Entry-level",
+      "project_type": "complex",
+      "skills": [
+        "web",
+        "ui/ux",
+        "javascript",
+        "react",
+        "next"
+      ]
+    }
+  ]
 }
